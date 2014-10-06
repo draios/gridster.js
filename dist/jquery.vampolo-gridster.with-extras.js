@@ -1,4 +1,4 @@
-/*! vampolo-gridster - v0.5.14 - 2014-10-06
+/*! vampolo-gridster - v0.5.15 - 2014-10-06
 
 * Copyright (c) 2014 Vincenzo Ampolo; Licensed MIT */
 
