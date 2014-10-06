@@ -1,4 +1,4 @@
-/*! gridster.js - v0.5.11 - 2014-10-06
+/*! gridster.js - v0.5.12 - 2014-10-06
 
 * Copyright (c) 2014 Vincenzo Ampolo; Licensed MIT */
 
