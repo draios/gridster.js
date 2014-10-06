@@ -1,0 +1,22 @@
+{
+  "name": "vampolo-gridster.js",
+  "version": "0.5.11",
+  "homepage": "https://github.com/vampolo/gridster.js",
+  "authors": [
+    "Vincenzo Ampolo <vincenzo.ampolo@gmail.com>"
+  ],
+  "description": "a gridster fork",
+  "main": "dist/",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
