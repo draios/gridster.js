@@ -2,23 +2,22 @@
   "name": "gridster",
   "title": "gridster.js",
   "description": "a drag-and-drop multi-column jQuery grid plugin",
-  "version": "0.5.10",
-  "homepage": "http://gridster.net/",
+  "version": "0.5.11",
   "author": {
-    "name": "ducksboard",
-    "email": "hackers@ducksboard.com"
+    "name": "Vincenzo Ampolo",
+    "email": "vincenzo.ampolo@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ducksboard/gridster.js.git"
+    "url": "git://github.com/vampolo/gridster.js.git"
   },
   "bugs": {
-    "url": "https://github.com/ducksboard/gridster.js/issues"
+    "url": "https://github.com/vampolo/gridster.js/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/ducksboard/gridster.js/blob/master/LICENSE"
+      "url": "https://github.com/vampolo/gridster.js/blob/master/LICENSE"
     }
   ],
   "keywords": [],
