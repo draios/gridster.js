@@ -6,7 +6,7 @@
     "Vincenzo Ampolo <vincenzo.ampolo@gmail.com>"
   ],
   "description": "a gridster fork",
-  "main": "dist/",
+  "main": "dist/jquery.gridster.js",
   "moduleType": [
     "amd",
     "globals"
