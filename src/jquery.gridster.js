@@ -348,7 +348,7 @@
                 'data-row': pos.row,
                 'data-sizex' : size_x,
                 'data-sizey' : size_y
-            }).addClass('gs-w').appendTo(this.$el).hide();
+            }).addClass('gs-w');
 
         this.$widgets = this.$widgets.add($w);
 
@@ -779,7 +779,6 @@
         this.remove_from_gridmap(wgd);
 
         $el.fadeOut($.proxy(function() {
-            $el.remove();
 
             if (!silent) {
                 $nexts.each($.proxy(function(i, widget) {

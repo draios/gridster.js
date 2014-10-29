@@ -1,6 +1,6 @@
-/*! gridster.js - v0.5.12 - 2014-10-06
-
-* Copyright (c) 2014 Vincenzo Ampolo; Licensed MIT */
+/*! gridster.js - v0.5.6 - 2014-10-29
+* http://gridster.net/
+* Copyright (c) 2014 ducksboard; Licensed MIT */
 
 ;(function(root, factory) {
 
@@ -834,7 +834,7 @@
 
     fn.ignore_drag = function(event) {
         if (this.options.handle) {
-            return !$(event.target).is(this.options.handle);
+            return !$(event.target).is(this.options.handle) && !$(event.target).parent().is(this.options.handle);
         }
 
         if ($.isFunction(this.options.ignore_dragging)) {
@@ -1195,7 +1195,7 @@
                 'data-row': pos.row,
                 'data-sizex' : size_x,
                 'data-sizey' : size_y
-            }).addClass('gs-w').appendTo(this.$el).hide();
+            }).addClass('gs-w');
 
         this.$widgets = this.$widgets.add($w);
 
@@ -1626,7 +1626,6 @@
         this.remove_from_gridmap(wgd);
 
         $el.fadeOut($.proxy(function() {
-            $el.remove();
 
             if (!silent) {
                 $nexts.each($.proxy(function(i, widget) {
