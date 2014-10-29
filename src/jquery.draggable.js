@@ -412,7 +412,7 @@
 
     fn.ignore_drag = function(event) {
         if (this.options.handle) {
-            return !$(event.target).is(this.options.handle);
+            return !$(event.target).is(this.options.handle) && !$(event.target).parent().is(this.options.handle);
         }
 
         if ($.isFunction(this.options.ignore_dragging)) {

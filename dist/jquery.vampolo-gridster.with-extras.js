@@ -1,4 +1,4 @@
-/*! vampolo-gridster - v0.5.15 - 2014-10-06
+/*! vampolo-gridster - v0.5.15 - 2014-10-29
 
 * Copyright (c) 2014 Vincenzo Ampolo; Licensed MIT */
 
@@ -834,7 +834,7 @@
 
     fn.ignore_drag = function(event) {
         if (this.options.handle) {
-            return !$(event.target).is(this.options.handle);
+            return !$(event.target).is(this.options.handle) && !$(event.target).parent().is(this.options.handle);
         }
 
         if ($.isFunction(this.options.ignore_dragging)) {
