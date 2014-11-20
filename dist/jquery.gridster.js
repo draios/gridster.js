@@ -1,4 +1,4 @@
-/*! gridster.js - v0.5.6 - 2014-10-29
+/*! gridster.js - v0.5.6 - 2014-11-20
 * http://gridster.net/
 * Copyright (c) 2014 ducksboard; Licensed MIT */
 
@@ -834,7 +834,7 @@
 
     fn.ignore_drag = function(event) {
         if (this.options.handle) {
-            return !$(event.target).is(this.options.handle) && !$(event.target).parent().is(this.options.handle);
+            return !$(event.target).parents(this.options.handle).is(this.options.handle);
         }
 
         if ($.isFunction(this.options.ignore_dragging)) {
