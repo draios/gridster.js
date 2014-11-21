@@ -412,7 +412,8 @@
 
     fn.ignore_drag = function(event) {
         if (this.options.handle) {
-            return !$(event.target).parents(this.options.handle).is(this.options.handle);
+            // extend handle to the parent of the clicked selector
+            return !$(event.target).is(this.options.handle) && !$(event.target).parents(this.options.handle).is(this.options.handle);
         }
 
         if ($.isFunction(this.options.ignore_dragging)) {
