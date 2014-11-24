@@ -411,16 +411,32 @@
     };
 
     fn.ignore_drag = function(event) {
+        var res = true;
+        var shouldIgnore;
+
         if (this.options.handle) {
-            // extend handle to the parent of the clicked selector
-            return !$(event.target).is(this.options.handle) && !$(event.target).parents(this.options.handle).is(this.options.handle);
+            //
+            // User clicked on the handler itself
+            //
+            res = !$(event.target).is(this.options.handle);
+
+            //
+            // User clicked on any children tag
+            //
+            if (res === true) {
+                res = !$(event.target).parents(this.options.handle).is(this.options.handle);
+            }
+
+            shouldIgnore = $(event.target).is(this.options.ignore_dragging.join(', '));
+
+            return shouldIgnore || res;
         }
 
         if ($.isFunction(this.options.ignore_dragging)) {
             return this.options.ignore_dragging(event);
         }
 
-        return $(event.target).is(this.options.ignore_dragging.join(', '));
+        return false;
     };
 
     //jQuery adapter
