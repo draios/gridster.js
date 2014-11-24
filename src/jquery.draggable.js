@@ -411,8 +411,13 @@
     };
 
     fn.ignore_drag = function(event) {
+
+        if ($.isFunction(this.options.ignore_dragging)) {
+            return this.options.ignore_dragging(event);
+        }
+
         var res = true;
-        var shouldIgnore;
+        var shouldIgnore = $(event.target).is(this.options.ignore_dragging.join(', '));
 
         if (this.options.handle) {
             //
@@ -426,17 +431,9 @@
             if (res === true) {
                 res = !$(event.target).parents(this.options.handle).is(this.options.handle);
             }
-
-            shouldIgnore = $(event.target).is(this.options.ignore_dragging.join(', '));
-
-            return shouldIgnore || res;
         }
 
-        if ($.isFunction(this.options.ignore_dragging)) {
-            return this.options.ignore_dragging(event);
-        }
-
-        return false;
+        return shouldIgnore || res;
     };
 
     //jQuery adapter
