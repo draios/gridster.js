@@ -838,7 +838,7 @@
             return this.options.ignore_dragging(event);
         }
 
-        var res = true;
+        var res = false;
         var shouldIgnore = $(event.target).is(this.options.ignore_dragging.join(', '));
 
         if (this.options.handle) {
