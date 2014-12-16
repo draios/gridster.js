@@ -417,19 +417,20 @@
         }
 
         var res = false;
-        var shouldIgnore = $(event.target).is(this.options.ignore_dragging.join(', '));
+        var target = $(event.target);
+        var shouldIgnore = target.is(this.options.ignore_dragging.join(', '));
 
         if (this.options.handle) {
             //
             // User clicked on the handler itself
             //
-            res = !$(event.target).is(this.options.handle);
+            res = !target.is(this.options.handle);
 
             //
             // User clicked on any children tag
             //
             if (res === true) {
-                res = !$(event.target).parents(this.options.handle).is(this.options.handle);
+                res = !target.parents(this.options.handle).is(this.options.handle);
             }
         }
 
