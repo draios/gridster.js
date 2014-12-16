@@ -1,4 +1,4 @@
-/*! gridster.js - v0.5.6 - 2014-11-24
+/*! gridster.js - v0.5.6 - 2014-12-16
 * http://gridster.net/
 * Copyright (c) 2014 ducksboard; Licensed MIT */
 
@@ -839,19 +839,26 @@
         }
 
         var res = false;
-        var shouldIgnore = $(event.target).is(this.options.ignore_dragging.join(', '));
+        var target = $(event.target);
+        var ignoreStringForIs = this.options.ignore_dragging.join(', ');
+        var shouldIgnore = target.is(ignoreStringForIs);
 
         if (this.options.handle) {
             //
+            // If we are a child see if we are child of a tag/class
+            // that should be ignored
+            //
+            shouldIgnore = shouldIgnore || target.parentsUntil(this.options.handle).is(ignoreStringForIs);
+            //
             // User clicked on the handler itself
             //
-            res = !$(event.target).is(this.options.handle);
+            res = !target.is(this.options.handle);
 
             //
             // User clicked on any children tag
             //
             if (res === true) {
-                res = !$(event.target).parents(this.options.handle).is(this.options.handle);
+                res = !target.parents(this.options.handle).is(this.options.handle);
             }
         }
 
