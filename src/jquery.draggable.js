@@ -418,9 +418,15 @@
 
         var res = false;
         var target = $(event.target);
-        var shouldIgnore = target.is(this.options.ignore_dragging.join(', '));
+        var ignoreStringForIs = this.options.ignore_dragging.join(', ');
+        var shouldIgnore = target.is(ignoreStringForIs);
 
         if (this.options.handle) {
+            //
+            // If we are a child see if we are child of a tag/class
+            // that should be ignored
+            //
+            shouldIgnore = shouldIgnore || target.parentsUntil(this.options.handle).is(ignoreStringForIs);
             //
             // User clicked on the handler itself
             //
