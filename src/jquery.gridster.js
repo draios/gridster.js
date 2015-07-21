@@ -369,8 +369,6 @@
         this.set_dom_grid_height();
 
         this.drag_api.set_limits(this.cols * this.min_widget_width);
-
-        return $w.fadeIn();
     };
 
 
