@@ -776,20 +776,26 @@
 
         this.remove_from_gridmap(wgd);
 
-        $el.fadeOut($.proxy(function() {
+        if (silent === false) {
+            $el.fadeOut($.proxy(function() {
 
-            if (!silent) {
-                $nexts.each($.proxy(function(i, widget) {
-                    this.move_widget_up( $(widget), wgd.size_y );
-                }, this));
-            }
+                if (!silent) {
+                    $nexts.each($.proxy(function(i, widget) {
+                        this.move_widget_up( $(widget), wgd.size_y );
+                    }, this));
+                }
 
-            this.set_dom_grid_height();
+                this.set_dom_grid_height();
 
+                if (callback) {
+                    callback.call(this, el);
+                }
+            }, this));
+        } else {
             if (callback) {
                 callback.call(this, el);
             }
-        }, this));
+        }
 
         return this;
     };
