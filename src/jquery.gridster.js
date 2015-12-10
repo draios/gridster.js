@@ -792,6 +792,8 @@
                 }
             }, this));
         } else {
+            this.set_dom_grid_height();
+
             if (callback) {
                 callback.call(this, el);
             }
