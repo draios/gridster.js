@@ -1,4 +1,4 @@
-/*! gridster.js - v0.5.6 - 2015-08-28
+/*! gridster.js - v0.5.6 - 2015-12-10
 * http://gridster.net/
 * Copyright (c) 2015 ducksboard; Licensed MIT */
 
@@ -1660,6 +1660,8 @@
                 }
             }, this));
         } else {
+            this.set_dom_grid_height();
+
             if (callback) {
                 callback.call(this, el);
             }
